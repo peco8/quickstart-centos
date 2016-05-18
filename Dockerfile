@@ -5,6 +5,7 @@ MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
 # Set username/password login as a default
 # public authentication will be enabled with AUTHORIZED_KEY ENV
+ENV ROOT_PWD default
 ENV AUTHORIZED_KEY none
 
 # Install openssh, openssh-clients, openssh-server
@@ -23,6 +24,10 @@ yum autoremove -y && \
 yum clean all && \
 rm -rf /var/cache/yum/*
 
+# Make start.sh excutable
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 ## For username/password login
 # Set the root password for demo
 RUN echo "root:root" | chpasswd
@@ -30,5 +35,5 @@ RUN echo "root:root" | chpasswd
 # Expose 22 for SSH access
 EXPOSE 22
 
-# Start sshd
-CMD ["/usr/sbin/sshd", "-D"]
+# Start supervisord to controll processes
+CMD ["./start.sh", "-bash"]
