@@ -30,5 +30,5 @@ RUN echo "root:root" | chpasswd
 # Expose 22 for SSH access
 EXPOSE 22
 
-# Start supervisord to controll processes
+# Start sshd
 CMD ["/usr/sbin/sshd", "-D"]
