@@ -7,8 +7,8 @@ Getting start in Arukas wih CentOS
 ```
 $ git clone https://github.com/peco8/quickstart-centos.git
 $ cd quickstart-centos
-$ docker build --no-cache .
-$ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P a90b0e9160d0
+$ docker build --no-cache --tag quickstart-centos .
+$ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P quickstart-centos
 $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
@@ -18,8 +18,8 @@ set the environment variable ROOT_PWD to your specific password when running the
 ```
 $ git clone https://github.com/peco8/quickstart-centos.git
 $ cd quickstart-centos
-$ docker build --no-cache .
-$ docker run -d -e ROOT_PWD="centos" -P a90b0e9160d0
+$ docker build --no-cache --tag quickstart-centos .
+$ docker run -d -e ROOT_PWD="centos" -P quickstart-centos
 $ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
