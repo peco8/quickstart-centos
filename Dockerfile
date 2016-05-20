@@ -16,6 +16,7 @@ RUN yum -y install openssh openssh-clients openssh-server && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key  && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && \
     ssh-keygen -q -N "" -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key && \
+    ssh-keygen -A && \
 sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
 sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config && \
 sed -i 's/session\s*required\s*pam_loginuid.so/session    optional     pam_loginuid.so/g' /etc/pam.d/sshd && \
