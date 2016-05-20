@@ -1,7 +1,7 @@
 # quickstart-centos
 Getting start in Arukas wih CentOS
 
-### LOCAL
+## Running locally
 
 ##### Public key authentication
 ```
