@@ -9,7 +9,6 @@ $ git clone git@github.com:peco8/quickstart-centos.git
 $ cd quickstart-centos
 $ docker build --no-cache --tag quickstart-centos .
 $ docker run -d -e AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" -P quickstart-centos
-$ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
 
 ##### username/password
@@ -20,9 +19,8 @@ $ git clone git@github.com:peco8/quickstart-centos.git
 $ cd quickstart-centos
 $ docker build --no-cache --tag quickstart-centos .
 $ docker run -d -e ROOT_PWD="centos" -P quickstart-centos
-$ ssh root@192.168.59.103 -p $(docker port `docker ps -q -n=1` | cut -d':' -f2)
 ```
-
+And now you can ssh as root on the container’s IP address  on some port of Docker daemon's host IP address.
 
 ## Deploying to Arukas
 
