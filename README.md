@@ -37,7 +37,7 @@ $ docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET
 $ docker run --rm -e ARUKAS_JSON_API_TOKEN=<API_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> arukasio/arukas run --instances=1 --mem=512 --ports=22:tcp peco8/quickstart-centos
 ```
 
-## Author
+## Authors
 
 * Toshiki Inami (<t-inami@arukas.io>)
 
